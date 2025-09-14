@@ -12,12 +12,13 @@ const Hero = () => (
     <Section yPadding="py-6">
       <NavbarTwoColumns logo={<Logo xl />}>
         <li>
-          <Link href="https://github.com/ixartz/Next-JS-Landing-Page-Starter-Template">
-            GitHub
-          </Link>
+          <Link href="/about">关于我们</Link>
         </li>
         <li>
-          <Link href="/">Sign in</Link>
+          <Link href="/products">产品中心</Link>
+        </li>
+        <li>
+          <Link href="/contact">联系我们</Link>
         </li>
       </NavbarTwoColumns>
     </Section>
@@ -26,14 +27,14 @@ const Hero = () => (
       <HeroOneButton
         title={
           <>
-            {'The modern landing page for\n'}
-            <span className="text-primary-500">React developers</span>
+            {'专业精密模具制造商\n'}
+            <span className="text-primary-500">众联达模具</span>
           </>
         }
-        description="The easiest way to build a React landing page in seconds."
+        description="专业生产销售钻尾螺丝模具、组合模具等，为您提供高品质的精密模具解决方案。"
         button={
-          <Link href="https://creativedesignsguru.com/category/nextjs/">
-            <Button xl>Download Your Free Theme</Button>
+          <Link href="/contact">
+            <Button xl>联系我们</Button>
           </Link>
         }
       />
