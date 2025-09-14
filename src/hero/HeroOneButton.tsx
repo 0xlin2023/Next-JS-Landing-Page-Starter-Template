@@ -7,13 +7,17 @@ type IHeroOneButtonProps = {
 };
 
 const HeroOneButton = (props: IHeroOneButtonProps) => (
-  <header className="text-center">
-    <h1 className="whitespace-pre-line text-5xl font-bold leading-hero text-gray-900">
+  <header className="animate-fade-in text-center">
+    <h1 className="mb-6 whitespace-pre-line font-display text-5xl font-bold leading-tight tracking-tighter text-gray-900 md:text-6xl lg:text-7xl">
       {props.title}
     </h1>
-    <div className="mb-16 mt-4 text-2xl">{props.description}</div>
+    <div className="mx-auto mb-12 mt-8 max-w-3xl font-text text-xl leading-normal tracking-wide text-gray-600 md:text-2xl">
+      {props.description}
+    </div>
 
-    {props.button}
+    <div className="animate-slide-up" style={{ animationDelay: '0.3s' }}>
+      {props.button}
+    </div>
   </header>
 );
 

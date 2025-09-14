@@ -7,7 +7,7 @@ import { Sponsors } from './Sponsors';
 import { VerticalFeatures } from './VerticalFeatures';
 
 const Base = () => (
-  <div className="text-gray-600 antialiased">
+  <div className="bg-white font-text text-gray-600 antialiased selection:bg-apple-blue/10 selection:text-apple-blue">
     <Meta title={AppConfig.title} description={AppConfig.description} />
     <Hero />
     <Sponsors />

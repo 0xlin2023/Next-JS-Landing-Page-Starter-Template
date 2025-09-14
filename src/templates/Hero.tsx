@@ -8,30 +8,47 @@ import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
 import { Logo } from './Logo';
 
 const Hero = () => (
-  <Background color="bg-gray-100">
+  <Background color="bg-gray-50">
     <Section yPadding="py-6">
       <NavbarTwoColumns logo={<Logo xl />}>
         <li>
-          <Link href="/about">关于我们</Link>
+          <Link
+            href="/about"
+            className="font-text text-base font-medium text-gray-700 transition-colors duration-200 hover:text-apple-blue"
+          >
+            关于我们
+          </Link>
         </li>
         <li>
-          <Link href="/products">产品中心</Link>
+          <Link
+            href="/products"
+            className="font-text text-base font-medium text-gray-700 transition-colors duration-200 hover:text-apple-blue"
+          >
+            产品中心
+          </Link>
         </li>
         <li>
-          <Link href="/contact">联系我们</Link>
+          <Link
+            href="/contact"
+            className="font-text text-base font-medium text-gray-700 transition-colors duration-200 hover:text-apple-blue"
+          >
+            联系我们
+          </Link>
         </li>
       </NavbarTwoColumns>
     </Section>
 
-    <Section yPadding="pt-20 pb-32">
+    <Section yPadding="pt-24 pb-32 md:pt-32 md:pb-40">
       <HeroOneButton
         title={
           <>
             {'专业精密模具制造商\n'}
-            <span className="text-primary-500">众联达模具</span>
+            <span className="bg-gradient-to-r from-apple-blue to-apple-blue-light bg-clip-text text-transparent">
+              众联达模具
+            </span>
           </>
         }
-        description="专业生产销售钻尾螺丝模具、组合模具等，为您提供高品质的精密模具解决方案。"
+        description="专业生产销售钻尾螺丝模具、组合模具等，为您提供高品质的精密模具解决方案。精益求精，追求卓越，为客户创造更大价值。"
         button={
           <Link href="/contact">
             <Button xl>联系我们</Button>

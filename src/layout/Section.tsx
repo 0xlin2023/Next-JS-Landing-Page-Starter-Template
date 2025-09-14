@@ -9,22 +9,28 @@ type ISectionProps = {
 
 const Section = (props: ISectionProps) => (
   <div
-    className={`mx-auto max-w-screen-lg px-3 ${
-      props.yPadding ? props.yPadding : 'py-16'
+    className={`mx-auto max-w-7xl px-6 lg:px-8 ${
+      props.yPadding ? props.yPadding : 'py-20'
     }`}
   >
     {(props.title || props.description) && (
-      <div className="mb-12 text-center">
+      <div className="mb-16 animate-fade-in text-center">
         {props.title && (
-          <h2 className="text-4xl font-bold text-gray-900">{props.title}</h2>
+          <h2 className="mb-6 font-display text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">
+            {props.title}
+          </h2>
         )}
         {props.description && (
-          <div className="mt-4 text-xl md:px-20">{props.description}</div>
+          <div className="mx-auto max-w-4xl font-text text-xl leading-normal tracking-wide text-gray-600 md:text-2xl">
+            {props.description}
+          </div>
         )}
       </div>
     )}
 
-    {props.children}
+    <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
+      {props.children}
+    </div>
   </div>
 );
 
