@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { memo } from 'react';
 
 type ISectionProps = {
   title?: string;
@@ -7,7 +8,7 @@ type ISectionProps = {
   children: ReactNode;
 };
 
-const Section = (props: ISectionProps) => (
+const Section = memo((props: ISectionProps) => (
   <div
     className={`mx-auto max-w-7xl px-6 lg:px-8 ${
       props.yPadding ? props.yPadding : 'py-20'
@@ -32,6 +33,9 @@ const Section = (props: ISectionProps) => (
       {props.children}
     </div>
   </div>
-);
+));
+
+// 添加displayName以便调试
+Section.displayName = 'Section';
 
 export { Section };

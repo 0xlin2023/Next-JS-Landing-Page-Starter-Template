@@ -1,14 +1,22 @@
+import { memo, useMemo } from 'react';
+
 import { AppConfig } from '../utils/AppConfig';
 
 type ILogoProps = {
   xl?: boolean;
 };
 
-const Logo = (props: ILogoProps) => {
+const Logo = memo((props: ILogoProps) => {
   const size = props.xl ? '40' : '32';
-  const fontStyle = props.xl
-    ? 'font-display font-bold text-2xl tracking-tight'
-    : 'font-display font-bold text-xl tracking-tight';
+
+  // 使用useMemo缓存动态计算的样式
+  const fontStyle = useMemo(
+    () =>
+      props.xl
+        ? 'font-display font-bold text-2xl tracking-tight'
+        : 'font-display font-bold text-xl tracking-tight',
+    [props.xl],
+  );
 
   return (
     <span
@@ -47,6 +55,9 @@ const Logo = (props: ILogoProps) => {
       </span>
     </span>
   );
-};
+});
+
+// 添加displayName以便调试
+Logo.displayName = 'Logo';
 
 export { Logo };

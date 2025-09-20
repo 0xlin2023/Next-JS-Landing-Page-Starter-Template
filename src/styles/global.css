@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 
@@ -6,76 +6,17 @@
 
 @tailwind utilities;
 
-/* Apple Design System - Font System */
-@font-face {
-  font-family: 'SF Pro Display';
-  src: url('/fonts/SF-Pro-Display-Regular.woff2') format('woff2'),
-       url('/fonts/SF-Pro-Display-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SF Pro Display';
-  src: url('/fonts/SF-Pro-Display-Medium.woff2') format('woff2'),
-       url('/fonts/SF-Pro-Display-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SF Pro Display';
-  src: url('/fonts/SF-Pro-Display-Semibold.woff2') format('woff2'),
-       url('/fonts/SF-Pro-Display-Semibold.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SF Pro Display';
-  src: url('/fonts/SF-Pro-Display-Bold.woff2') format('woff2'),
-       url('/fonts/SF-Pro-Display-Bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SF Pro Text';
-  src: url('/fonts/SF-Pro-Text-Regular.woff2') format('woff2'),
-       url('/fonts/SF-Pro-Text-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SF Pro Text';
-  src: url('/fonts/SF-Pro-Text-Medium.woff2') format('woff2'),
-       url('/fonts/SF-Pro-Text-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SF Pro Text';
-  src: url('/fonts/SF-Pro-Text-Semibold.woff2') format('woff2'),
-       url('/fonts/SF-Pro-Text-Semibold.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
+/* Apple Design System - 优化的字体配置 */
+/* 使用系统字体作为主要选择，避免404错误并提升性能 */
 
 /* Apple Typography Base Styles */
 html {
-  font-family: 'SF Pro Text', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  /* 优先使用系统字体，确保最佳性能和一致的Apple风格 */
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
 }
 
 /* Apple Design System - Color Variables */
@@ -142,16 +83,16 @@ html {
   color: var(--apple-white);
 }
 
-/* Apple Typography Classes */
+/* Apple Typography Classes - 使用系统字体优化 */
 .apple-headline {
-  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', 'Segoe UI', sans-serif;
   font-weight: 600;
   letter-spacing: -0.022em;
   line-height: 1.08333;
 }
 
 .apple-subheadline {
-  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', 'Segoe UI', sans-serif;
   font-weight: 400;
   font-size: 21px;
   line-height: 1.381;
@@ -159,7 +100,7 @@ html {
 }
 
 .apple-body {
-  font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', 'Segoe UI', sans-serif;
   font-weight: 400;
   font-size: 17px;
   line-height: 1.47059;

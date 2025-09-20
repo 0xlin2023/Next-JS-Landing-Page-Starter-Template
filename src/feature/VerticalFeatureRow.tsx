@@ -1,5 +1,6 @@
 import className from 'classnames';
 import { useRouter } from 'next/router';
+import { memo, useMemo } from 'react';
 
 type IVerticalFeatureRowProps = {
   title: string;
@@ -9,17 +10,22 @@ type IVerticalFeatureRowProps = {
   reverse?: boolean;
 };
 
-const VerticalFeatureRow = (props: IVerticalFeatureRowProps) => {
-  const verticalFeatureClass = className(
-    'mt-24',
-    'flex',
-    'flex-wrap',
-    'items-center',
-    'gap-8',
-    'md:gap-16',
-    {
-      'flex-row-reverse': props.reverse,
-    },
+const VerticalFeatureRow = memo((props: IVerticalFeatureRowProps) => {
+  // 使用useMemo缓存className计算结果
+  const verticalFeatureClass = useMemo(
+    () =>
+      className(
+        'mt-24',
+        'flex',
+        'flex-wrap',
+        'items-center',
+        'gap-8',
+        'md:gap-16',
+        {
+          'flex-row-reverse': props.reverse,
+        },
+      ),
+    [props.reverse],
   );
 
   const router = useRouter();
@@ -50,6 +56,9 @@ const VerticalFeatureRow = (props: IVerticalFeatureRowProps) => {
       </div>
     </div>
   );
-};
+});
+
+// 添加displayName以便调试
+VerticalFeatureRow.displayName = 'VerticalFeatureRow';
 
 export { VerticalFeatureRow };

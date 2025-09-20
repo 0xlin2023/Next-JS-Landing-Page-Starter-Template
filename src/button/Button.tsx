@@ -1,4 +1,5 @@
 import className from 'classnames';
+import { memo } from 'react';
 
 type IButtonProps = {
   xl?: boolean;
@@ -7,7 +8,7 @@ type IButtonProps = {
   className?: string;
 };
 
-const Button = (props: IButtonProps) => {
+const Button = memo((props: IButtonProps) => {
   const btnClass = className(
     // Apple Button Base Styles
     'apple-button',
@@ -42,6 +43,9 @@ const Button = (props: IButtonProps) => {
   );
 
   return <button className={btnClass}>{props.children}</button>;
-};
+});
+
+// 添加displayName以便调试
+Button.displayName = 'Button';
 
 export { Button };
