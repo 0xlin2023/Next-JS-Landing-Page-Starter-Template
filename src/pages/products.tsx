@@ -295,7 +295,7 @@ const Products = () => {
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`group relative flex items-center rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110 ${
+              className={`group relative flex items-center gap-3 rounded-full px-4 py-3 shadow-lg transition-all duration-300 hover:scale-105 ${
                 activeSection === item.id
                   ? 'bg-apple-blue text-white shadow-apple-blue'
                   : 'bg-white text-gray-600 hover:bg-apple-blue hover:text-white hover:shadow-apple-blue'
@@ -304,18 +304,9 @@ const Products = () => {
               aria-label={`跳转到${item.title}部分`}
             >
               {item.icon}
-
-              {/* 标签提示 */}
-              <div
-                className={`absolute left-full ml-3 whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium opacity-0 transition-all duration-300 group-hover:opacity-100 ${
-                  activeSection === item.id
-                    ? 'bg-apple-blue text-white'
-                    : 'bg-gray-900 text-white'
-                }`}
-              >
+              <span className="whitespace-nowrap text-sm font-medium">
                 {item.title}
-                <div className="absolute left-0 top-1/2 -ml-1 size-2 -translate-y-1/2 rotate-45 bg-inherit"></div>
-              </div>
+              </span>
             </button>
           ))}
         </div>
@@ -357,9 +348,6 @@ const Products = () => {
           <h1 className="mb-6 animate-fade-in font-display text-5xl font-bold tracking-tight text-gray-900 md:text-6xl">
             钻尾模具
           </h1>
-          <p className="mx-auto max-w-4xl animate-slide-up font-text text-xl leading-normal tracking-wide text-gray-600 md:text-2xl">
-            专业生产MB、MC系列钻尾模具，采用高速钢和铬钢材质，满足不同客户的工艺需求。为全球客户提供高质量、精准交货期的钻尾模具产品。
-          </p>
         </div>
 
         {/* 钻尾刀型展示 */}
