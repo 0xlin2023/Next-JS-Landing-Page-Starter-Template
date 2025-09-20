@@ -221,93 +221,8 @@ const Products = () => {
           </p>
         </div>
 
-        {/* 产品工艺展示 */}
-        <div
-          className="mb-20 animate-slide-up text-center"
-          style={{ animationDelay: '0.3s' }}
-        >
-          <div className="mx-auto max-w-6xl">
-            <div className="relative rounded-apple-xl bg-gradient-to-b from-gray-50 to-white p-8 shadow-apple-lg">
-              <div className="grid items-center gap-12 md:grid-cols-2">
-                <div className="space-y-6">
-                  <div className="rounded-apple-xl bg-white p-8 shadow-apple">
-                    <div className="relative flex h-48 items-center justify-center rounded-apple bg-gradient-to-br from-apple-blue/10 to-apple-blue/5">
-                      <div className="relative">
-                        {/* 钻头示意图 */}
-                        <div className="relative size-20 rounded-t-full bg-gradient-to-b from-gray-400 to-gray-600">
-                          <div className="absolute left-1/2 top-0 h-16 w-2 -translate-x-1/2 rounded-full bg-gradient-to-b from-gray-300 to-gray-500"></div>
-                          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-2">
-                            <div className="size-6 rounded-full bg-gray-700"></div>
-                          </div>
-                        </div>
-                        {/* 旋转指示 */}
-                        <div className="absolute -right-8 top-1/2 -translate-y-1/2">
-                          <svg
-                            className="size-8 animate-spin text-apple-blue"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <h3 className="font-display text-xl font-bold text-gray-900">
-                    钻尾螺丝成型工艺
-                  </h3>
-                  <p className="font-text text-gray-600">
-                    精密钻头设计，确保螺丝尖端完美成型
-                  </p>
-                </div>
-
-                <div className="space-y-6">
-                  <div className="rounded-apple-xl bg-white p-8 shadow-apple">
-                    <div className="relative flex h-48 items-center justify-center rounded-apple bg-gradient-to-br from-orange-100 to-orange-50">
-                      <div className="relative">
-                        {/* 模具示意图 */}
-                        <div className="relative h-16 w-32 overflow-hidden rounded-lg bg-gradient-to-b from-gray-500 to-gray-700">
-                          <div className="absolute inset-x-2 top-2 h-3 rounded-sm bg-gradient-to-r from-orange-400 to-red-500"></div>
-                          <div className="absolute bottom-2 left-1/2 size-8 -translate-x-1/2 rounded-full bg-gray-300"></div>
-                          <div className="absolute left-1/2 top-1/2 h-8 w-1 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gray-800"></div>
-                        </div>
-                        {/* 温度指示 */}
-                        <div className="absolute -top-6 left-1/2 -translate-x-1/2">
-                          <div className="flex space-x-1">
-                            <div className="h-4 w-1 animate-pulse rounded-full bg-orange-400"></div>
-                            <div
-                              className="h-3 w-1 animate-pulse rounded-full bg-red-400"
-                              style={{ animationDelay: '0.2s' }}
-                            ></div>
-                            <div
-                              className="h-5 w-1 animate-pulse rounded-full bg-yellow-400"
-                              style={{ animationDelay: '0.4s' }}
-                            ></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <h3 className="font-display text-xl font-bold text-gray-900">
-                    精密模具加工过程
-                  </h3>
-                  <p className="font-text text-gray-600">
-                    高温锻造，确保模具精度和耐用性
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* 钻尾模具规格表 */}
-        <div className="animate-slide-up" style={{ animationDelay: '0.6s' }}>
+        <div className="animate-slide-up" style={{ animationDelay: '0.3s' }}>
           <h2 className="mb-12 text-center font-display text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">
             产品规格表
           </h2>
@@ -1049,91 +964,10 @@ const Products = () => {
           </div>
         </div>
 
-        {/* 产品特色亮点 */}
-        <div
-          className="mt-32 animate-slide-up"
-          style={{ animationDelay: '0.9s' }}
-        >
-          <h2 className="mb-16 text-center font-display text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">
-            产品特色
-          </h2>
-          <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-3">
-            <div className="rounded-apple-xl bg-gray-50 p-8 text-center shadow-apple transition-colors duration-300 hover:bg-white hover:shadow-apple-lg">
-              <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-apple bg-apple-blue">
-                <svg
-                  className="size-8 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="mb-4 font-display text-xl font-bold text-gray-900">
-                全球布局
-              </h3>
-              <p className="font-text text-gray-600">
-                在钻尾模具领域具有全球性布局，取得行业领导地位
-              </p>
-            </div>
-            <div className="rounded-apple-xl bg-gray-50 p-8 text-center shadow-apple transition-colors duration-300 hover:bg-white hover:shadow-apple-lg">
-              <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-apple bg-apple-blue">
-                <svg
-                  className="size-8 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
-              </div>
-              <h3 className="mb-4 font-display text-xl font-bold text-gray-900">
-                精密制造
-              </h3>
-              <p className="font-text text-gray-600">
-                精密治具与高准确度检验仪器，确保产品质量卓越
-              </p>
-            </div>
-            <div className="rounded-apple-xl bg-gray-50 p-8 text-center shadow-apple transition-colors duration-300 hover:bg-white hover:shadow-apple-lg">
-              <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-apple bg-apple-blue">
-                <svg
-                  className="size-8 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="mb-4 font-display text-xl font-bold text-gray-900">
-                准时交付
-              </h3>
-              <p className="font-text text-gray-600">
-                高效率生产排程，提供精准交货期和竞争力价格
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* 联系我们CTA */}
         <div
-          className="mt-24 animate-slide-up text-center"
-          style={{ animationDelay: '1.2s' }}
+          className="mt-16 animate-slide-up text-center"
+          style={{ animationDelay: '0.6s' }}
         >
           <div className="mx-auto max-w-4xl rounded-apple-xl bg-gradient-to-r from-gray-50 to-gray-100 p-12">
             <h2 className="mb-6 font-display text-3xl font-bold text-gray-900 md:text-4xl">
