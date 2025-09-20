@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useMemo } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { Background } from '../background/Background';
 import { Meta } from '../layout/Meta';
@@ -13,6 +13,74 @@ import { AppConfig } from '../utils/AppConfig';
 const DRILL_DIAMETERS = [
   2.2, 2.3, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9,
   4.0, 4.1, 4.2, 4.3, 4.5, 4.7, 4.9, 5.1, 5.3, 5.5, 5.7,
+];
+
+// 导航菜单数据
+const NAVIGATION_ITEMS = [
+  {
+    id: 'drill-types',
+    title: '钻尾刀型',
+    icon: (
+      <svg
+        className="size-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+        />
+      </svg>
+    ),
+  },
+  {
+    id: 'drill-specifications',
+    title: '钻尾模具尺寸',
+    icon: (
+      <svg
+        className="size-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 0v10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"
+        />
+      </svg>
+    ),
+  },
+];
+
+// 钻尾刀型图片数据
+const DRILL_TYPE_IMAGES = [
+  { id: 'Z01', name: '钻尾Z01', description: 'Z01型钻尾刀具' },
+  { id: 'Z02', name: '钻尾Z02', description: 'Z02型钻尾刀具' },
+  { id: 'Z03', name: '钻尾Z03', description: 'Z03型钻尾刀具' },
+  { id: 'Z04', name: '钻尾Z04', description: 'Z04型钻尾刀具' },
+  { id: 'Z05', name: '钻尾Z05', description: 'Z05型钻尾刀具' },
+  { id: 'Z06', name: '钻尾Z06', description: 'Z06型钻尾刀具' },
+  { id: 'Z07', name: '钻尾Z07', description: 'Z07型钻尾刀具' },
+  { id: 'Z08', name: '钻尾Z08', description: 'Z08型钻尾刀具' },
+  { id: 'Z09', name: '钻尾Z09', description: 'Z09型钻尾刀具' },
+  { id: 'Z10', name: '钻尾Z10', description: 'Z10型钻尾刀具' },
+  { id: 'Z11', name: '钻尾Z11', description: 'Z11型钻尾刀具' },
+  { id: 'Z12', name: '钻尾Z12', description: 'Z12型钻尾刀具' },
+  { id: 'Z13', name: '钻尾Z13', description: 'Z13型钻尾刀具' },
+  { id: 'Z14', name: '钻尾Z14', description: 'Z14型钻尾刀具' },
+  { id: 'Z15', name: '钻尾Z15', description: 'Z15型钻尾刀具' },
+  { id: 'Z16', name: '钻尾Z16', description: 'Z16型钻尾刀具' },
+  { id: 'Z17', name: '钻尾Z17', description: 'Z17型钻尾刀具' },
+  { id: 'Z18', name: '钻尾Z18', description: 'Z18型钻尾刀具' },
+  { id: 'Z19', name: '钻尾Z19', description: 'Z19型钻尾刀具' },
+  { id: 'Z20', name: '钻尾Z20', description: 'Z20型钻尾刀具' },
+  { id: 'Z21', name: '钻尾Z21', description: 'Z21型钻尾刀具' },
+  { id: 'Z22', name: '钻尾Z22', description: 'Z22型钻尾刀具' },
 ];
 
 const DP_DIE_CODES = {
@@ -104,6 +172,46 @@ const DP_DIE_CODES = {
 };
 
 const Products = () => {
+  const [activeSection, setActiveSection] = useState('');
+
+  // 平滑滚动到指定区域
+  const scrollToSection = useCallback((sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+      setActiveSection(sectionId);
+    }
+  }, []);
+
+  // 监听滚动位置以高亮当前区域
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = NAVIGATION_ITEMS.map((item) => item.id);
+      const scrollPosition = window.scrollY + 200;
+
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (
+            scrollPosition >= offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // 初始化
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   // 使用useMemo缓存钻头直径列渲染
   const drillDiameterHeaders = useMemo(
     () =>
@@ -180,6 +288,39 @@ const Products = () => {
         description="东莞市众联达精密模具钻尾模具产品系列：专业生产MB、MC系列钻尾模具，采用高速钢和铬钢材质，满足不同客户工艺需求的精密模具解决方案。"
       />
 
+      {/* 左侧快速导航 */}
+      <div className="fixed left-6 top-1/2 z-30 hidden -translate-y-1/2 lg:block">
+        <div className="space-y-3">
+          {NAVIGATION_ITEMS.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className={`group relative flex items-center rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110 ${
+                activeSection === item.id
+                  ? 'bg-apple-blue text-white shadow-apple-blue'
+                  : 'bg-white text-gray-600 hover:bg-apple-blue hover:text-white hover:shadow-apple-blue'
+              }`}
+              title={item.title}
+              aria-label={`跳转到${item.title}部分`}
+            >
+              {item.icon}
+
+              {/* 标签提示 */}
+              <div
+                className={`absolute left-full ml-3 whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium opacity-0 transition-all duration-300 group-hover:opacity-100 ${
+                  activeSection === item.id
+                    ? 'bg-apple-blue text-white'
+                    : 'bg-gray-900 text-white'
+                }`}
+              >
+                {item.title}
+                <div className="absolute left-0 top-1/2 -ml-1 size-2 -translate-y-1/2 rotate-45 bg-inherit"></div>
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
+
       <Background color="bg-gray-50">
         <Section yPadding="py-6">
           <NavbarTwoColumns logo={<Logo xl />}>
@@ -221,8 +362,91 @@ const Products = () => {
           </p>
         </div>
 
+        {/* 钻尾刀型展示 */}
+        <div
+          id="drill-types"
+          className="mb-20 animate-slide-up"
+          style={{ animationDelay: '0.2s' }}
+        >
+          <h2 className="mb-12 text-center font-display text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">
+            钻尾刀型展示
+          </h2>
+
+          <div className="mx-auto max-w-7xl">
+            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+              {DRILL_TYPE_IMAGES.map((image, index) => (
+                <div
+                  key={image.id}
+                  className="group relative overflow-hidden rounded-apple-xl bg-white p-4 shadow-apple transition-all duration-300 hover:-translate-y-2 hover:shadow-apple-lg"
+                  style={{ animationDelay: `${0.1 + index * 0.05}s` }}
+                >
+                  {/* 图片容器 */}
+                  <div className="relative aspect-square overflow-hidden rounded-apple bg-gray-50">
+                    <img
+                      src={`/assets/images/钻尾刀型/${image.name}.jpg`}
+                      alt={image.description}
+                      className="size-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      loading="lazy"
+                    />
+
+                    {/* 图片覆盖层 */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                  </div>
+
+                  {/* 产品信息 */}
+                  <div className="mt-4 text-center">
+                    <h3 className="font-display text-lg font-bold text-gray-900">
+                      {image.id}
+                    </h3>
+                    <p className="mt-1 font-text text-sm text-gray-600">
+                      {image.description}
+                    </p>
+                  </div>
+
+                  {/* 悬停时显示的详细信息 */}
+                  <div className="absolute inset-0 flex items-center justify-center bg-apple-blue/95 opacity-0 transition-all duration-300 group-hover:opacity-100">
+                    <div className="text-center text-white">
+                      <div className="mx-auto mb-2 flex size-12 items-center justify-center rounded-full bg-white/20">
+                        <svg
+                          className="size-6"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                          />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                          />
+                        </svg>
+                      </div>
+                      <p className="font-display text-sm font-semibold">
+                        {image.id}型
+                      </p>
+                      <p className="mt-1 font-text text-xs opacity-90">
+                        点击查看详情
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* 钻尾模具规格表 */}
-        <div className="animate-slide-up" style={{ animationDelay: '0.3s' }}>
+        <div
+          id="drill-specifications"
+          className="animate-slide-up"
+          style={{ animationDelay: '0.4s' }}
+        >
           <h2 className="mb-12 text-center font-display text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">
             产品规格表
           </h2>
@@ -967,7 +1191,7 @@ const Products = () => {
         {/* 联系我们CTA */}
         <div
           className="mt-16 animate-slide-up text-center"
-          style={{ animationDelay: '0.6s' }}
+          style={{ animationDelay: '0.8s' }}
         >
           <div className="mx-auto max-w-4xl rounded-apple-xl bg-gradient-to-r from-gray-50 to-gray-100 p-12">
             <h2 className="mb-6 font-display text-3xl font-bold text-gray-900 md:text-4xl">
