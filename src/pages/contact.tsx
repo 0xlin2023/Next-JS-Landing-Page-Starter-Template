@@ -146,7 +146,7 @@ const Contact = () => {
     <div className="bg-white font-text text-gray-600 antialiased selection:bg-apple-blue/10 selection:text-apple-blue">
       <Meta
         title={`联系我们 - ${AppConfig.title}`}
-        description="联系东莞市众联达精密模具有限公司，获取专业钻尾模具解决方案。电话：15016880293，地址：广东省东莞市大朗镇洋务本康路四街8号。"
+        description="联系东莞市众联达精密模具有限公司，获取专业钻尾（自攻）螺丝模具解决方案。电话：15016880293，地址：广东省东莞市大朗镇富升路62号201室。"
       />
 
       {/* 导航栏 */}
@@ -189,7 +189,7 @@ const Contact = () => {
             联系我们
           </h1>
           <p className="mx-auto max-w-4xl animate-slide-up font-text text-xl leading-normal tracking-wide text-gray-600 md:text-2xl">
-            我们期待与您合作，为您提供专业的钻尾模具解决方案。欢迎通过以下方式与我们取得联系。
+            我们期待与您合作，为您提供专业的钻尾（自攻）螺丝模具解决方案。欢迎通过以下方式与我们取得联系。
           </p>
         </div>
 
@@ -391,144 +391,6 @@ const Contact = () => {
                 title="公司地址"
                 content={CONTACT_INFO.address}
               />
-            </div>
-          </div>
-        </div>
-
-        {/* 公司优势展示 */}
-        <div
-          className="mb-20 animate-slide-up"
-          style={{ animationDelay: '0.6s' }}
-        >
-          <h2 className="mb-12 text-center font-display text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">
-            为什么选择我们
-          </h2>
-
-          <div className="mx-auto max-w-6xl">
-            <div className="grid gap-8 md:grid-cols-2">
-              {/* 专业实力 */}
-              <div className="rounded-apple-xl bg-gradient-to-br from-blue-50 to-blue-100 p-8">
-                <div className="mb-6 flex size-16 items-center justify-center rounded-apple bg-blue-600">
-                  <svg
-                    className="size-8 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </div>
-                <h3 className="mb-4 font-display text-xl font-bold text-gray-900">
-                  专业实力
-                </h3>
-                <ul className="space-y-2 font-text text-gray-700">
-                  <li>• 多年钻尾模具制造经验</li>
-                  <li>• 完整的MB、MC系列产品线</li>
-                  <li>• 高速钢和铬钢双材质选择</li>
-                  <li>• 精密治具与高准确度检验</li>
-                </ul>
-              </div>
-
-              {/* 服务保障 */}
-              <div className="rounded-apple-xl bg-gradient-to-br from-green-50 to-green-100 p-8">
-                <div className="mb-6 flex size-16 items-center justify-center rounded-apple bg-green-600">
-                  <svg
-                    className="size-8 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
-                    />
-                  </svg>
-                </div>
-                <h3 className="mb-4 font-display text-xl font-bold text-gray-900">
-                  服务保障
-                </h3>
-                <ul className="space-y-2 font-text text-gray-700">
-                  <li>• 快速响应客户需求</li>
-                  <li>• 精准交货期承诺</li>
-                  <li>• 竞争力价格方案</li>
-                  <li>• 全方位技术支持</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 营业时间和联系提醒 */}
-        <div
-          className="animate-slide-up text-center"
-          style={{ animationDelay: '0.9s' }}
-        >
-          <div className="mx-auto max-w-4xl rounded-apple-xl bg-gradient-to-r from-gray-50 to-gray-100 p-12">
-            <div className="mb-8">
-              <h2 className="mb-4 font-display text-3xl font-bold text-gray-900 md:text-4xl">
-                营业时间
-              </h2>
-              <div className="mx-auto max-w-2xl space-y-2 font-text text-lg text-gray-600">
-                <p>周一至周五：上午 8:00 - 下午 6:00</p>
-                <p>周六：上午 9:00 - 下午 5:00</p>
-                <p className="text-gray-500">周日及法定节假日休息</p>
-              </div>
-            </div>
-
-            <div className="border-t border-gray-200 pt-8">
-              <h3 className="mb-4 font-display text-xl font-bold text-gray-900">
-                立即获取专业方案
-              </h3>
-              <p className="mx-auto mb-6 max-w-2xl font-text text-gray-600">
-                无论您需要标准规格还是定制化钻尾模具，我们都能为您提供最适合的解决方案
-              </p>
-              <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <a
-                  href={`tel:${CONTACT_INFO.phone}`}
-                  className="apple-button bg-apple-blue px-6 py-3 text-white hover:bg-apple-blue-dark hover:shadow-apple-blue"
-                >
-                  <svg
-                    className="mr-2 size-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                    />
-                  </svg>
-                  立即致电
-                </a>
-                <a
-                  href={`mailto:${CONTACT_INFO.email}`}
-                  className="apple-button border-2 border-apple-blue bg-white px-6 py-3 text-apple-blue hover:bg-apple-blue hover:text-white"
-                >
-                  <svg
-                    className="mr-2 size-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                    />
-                  </svg>
-                  发送邮件
-                </a>
-              </div>
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@ import { Section } from '@/layout/Section';
 const Sponsors = () => (
   <Section
     title="产品展示"
-    description="众联达精密模具产品系列，专业生产MB、MC系列钻尾模具，满足不同客户需求。"
+    description="众联达精密模具产品系列，专业生产MB、MC系列钻尾（自攻）螺丝模具，满足不同客户需求。"
   >
     <table className="mx-auto border-collapse">
       <tbody>

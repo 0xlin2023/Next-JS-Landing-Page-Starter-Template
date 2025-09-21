@@ -285,7 +285,7 @@ const Products = () => {
     <div className="bg-white font-text text-gray-600 antialiased selection:bg-apple-blue/10 selection:text-apple-blue">
       <Meta
         title={`钻尾模具 - ${AppConfig.title}`}
-        description="东莞市众联达精密模具钻尾模具产品系列：专业生产MB、MC系列钻尾模具，采用高速钢和铬钢材质，满足不同客户工艺需求的精密模具解决方案。"
+        description="东莞市众联达精密模具钻尾（自攻）螺丝模具产品系列：专业生产MB、MC系列钻尾（自攻）螺丝模具，采用高速钢和铬钢材质，满足不同客户工艺需求的精密模具解决方案。"
       />
 
       {/* 左侧快速导航 */}
@@ -346,7 +346,7 @@ const Products = () => {
       <Section yPadding="pt-20 pb-32">
         <div className="mb-16 text-center">
           <h1 className="mb-6 animate-fade-in font-display text-5xl font-bold tracking-tight text-gray-900 md:text-6xl">
-            钻尾模具
+            钻尾（自攻）螺丝模具
           </h1>
         </div>
 
@@ -1183,10 +1183,10 @@ const Products = () => {
         >
           <div className="mx-auto max-w-4xl rounded-apple-xl bg-gradient-to-r from-gray-50 to-gray-100 p-12">
             <h2 className="mb-6 font-display text-3xl font-bold text-gray-900 md:text-4xl">
-              需要专业钻尾模具？
+              需要专业钻尾（自攻）螺丝模具？
             </h2>
             <p className="mx-auto mb-8 max-w-2xl font-text text-xl text-gray-600">
-              我们提供全系列钻尾模具产品，满足不同规格需求，为您的生产提供可靠保障
+              我们提供全系列钻尾（自攻）螺丝模具产品，满足不同规格需求，为您的生产提供可靠保障
             </p>
             <Link href="/contact">
               <button className="apple-button bg-apple-blue px-8 py-4 text-lg font-semibold text-white hover:bg-apple-blue-dark hover:shadow-apple-blue">
