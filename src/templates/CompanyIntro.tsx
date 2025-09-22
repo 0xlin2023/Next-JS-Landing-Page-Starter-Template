@@ -169,34 +169,6 @@ const CompanyIntro = () => (
             </div>
           </div>
         </div>
-
-        {/* 底部统计数据 */}
-        <div className="mt-16 grid gap-8 border-t border-gray-200 pt-16 sm:grid-cols-3">
-          <div className="text-center">
-            <div className="mb-2 font-display text-4xl font-bold text-apple-blue">
-              15+
-            </div>
-            <div className="text-sm font-medium uppercase tracking-wide text-gray-600">
-              年行业经验
-            </div>
-          </div>
-          <div className="text-center">
-            <div className="mb-2 font-display text-4xl font-bold text-apple-blue">
-              100+
-            </div>
-            <div className="text-sm font-medium uppercase tracking-wide text-gray-600">
-              合作客户
-            </div>
-          </div>
-          <div className="text-center">
-            <div className="mb-2 font-display text-4xl font-bold text-apple-blue">
-              3
-            </div>
-            <div className="text-sm font-medium uppercase tracking-wide text-gray-600">
-              主要市场
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </Section>

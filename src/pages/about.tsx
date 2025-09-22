@@ -181,42 +181,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* 发展历程 */}
-        <div
-          className="mb-20 animate-slide-up"
-          style={{ animationDelay: '0.6s' }}
-        >
-          <div className="mx-auto max-w-4xl">
-            <h2 className="mb-12 text-center font-display text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">
-              发展历程
-            </h2>
-
-            <div className="space-y-8">
-              <TimelineItem
-                year="2019"
-                title="公司成立"
-                description="东莞市众联达精密模具有限公司正式成立，开始专注于钻尾（自攻）螺丝模具的研发和生产。"
-              />
-              <TimelineItem
-                year="2020-2021"
-                title="技术积累"
-                description="引进先进设备，建立专业技术团队，不断提升产品质量和生产效率。"
-              />
-              <TimelineItem
-                year="2022-2023"
-                title="稳步发展"
-                description="与多家知名螺丝厂建立长期合作关系，产品质量获得市场广泛认可。"
-              />
-              <TimelineItem
-                year="2024-至今"
-                title="持续创新"
-                description="继续深化技术创新，优化产品结构，提升服务质量，成为行业中等规模企业。"
-                isLast
-              />
-            </div>
-          </div>
-        </div>
-
         {/* 核心优势 */}
         <div
           className="mb-20 animate-slide-up"
