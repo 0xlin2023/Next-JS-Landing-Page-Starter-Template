@@ -1,6 +1,12 @@
 import Link from 'next/link';
-import type { ReactNode } from 'react';
-import { memo, useCallback } from 'react';
+import type { ReactElement, ReactNode } from 'react';
+import {
+  Children,
+  cloneElement,
+  isValidElement,
+  memo,
+  useCallback,
+} from 'react';
 
 import { useMobileMenu } from '../hooks/useMobileMenu';
 
@@ -120,40 +126,72 @@ const NavbarTwoColumns = memo((props: INavbarProps) => {
           {/* Mobile menu content */}
           <nav className="flex-1 p-6">
             <ul className="space-y-4" role="list" style={{ lineHeight: '1.5' }}>
-              {/* 规范克隆的 children，确保点击后关闭菜单并保持样式 */}
-              {Array.isArray(props.children) ? (
-                props.children.map((child, index) => {
-                  if (
-                    !child ||
-                    typeof child !== 'object' ||
-                    !('props' in child)
-                  ) {
-                    return null;
-                  }
+              {Children.toArray(props.children).map((child, index) => {
+                if (!isValidElement(child)) {
+                  return null;
+                }
+
+                const mobileItemClass =
+                  'block w-full rounded-lg px-4 py-3 text-base font-medium text-gray-700 transition-all duration-200 hover:translate-x-1 hover:bg-gray-50 hover:text-apple-blue focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-apple-blue focus-visible:ring-offset-2';
+
+                const normalizedChildren = Children.toArray(
+                  child.props.children,
+                ).filter(
+                  (node) => !(typeof node === 'string' && node.trim() === ''),
+                );
+
+                const primaryNode = normalizedChildren[0];
+
+                if (isValidElement(primaryNode)) {
+                  const originalOnClick = primaryNode.props.onClick as
+                    | ((event: React.MouseEvent) => void)
+                    | undefined;
+                  const originalOnKeyDown = primaryNode.props.onKeyDown as
+                    | ((event: React.KeyboardEvent) => void)
+                    | undefined;
+                  const mergedClassName = [
+                    mobileItemClass,
+                    primaryNode.props.className,
+                  ]
+                    .filter(Boolean)
+                    .join(' ');
+
+                  const handleItemClick = (event: React.MouseEvent) => {
+                    originalOnClick?.(event);
+                    close();
+                  };
+
+                  const handleItemKeyDown = (event: React.KeyboardEvent) => {
+                    originalOnKeyDown?.(event);
+                    if (event.key === 'Enter' || event.key === ' ') {
+                      close();
+                    }
+                  };
 
                   return (
                     <li key={index} role="listitem">
-                      <div
-                        className="block w-full whitespace-nowrap rounded-lg px-4 py-3 text-base font-medium text-gray-700 transition-all duration-200 focus-within:bg-gray-50 focus-within:text-apple-blue hover:translate-x-1 hover:bg-gray-50 hover:text-apple-blue"
-                        onClick={close}
-                        onKeyDown={handleKeyDown}
-                      >
-                        {child}
-                      </div>
+                      {cloneElement(primaryNode as ReactElement, {
+                        className: mergedClassName,
+                        onClick: handleItemClick,
+                        onKeyDown: handleItemKeyDown,
+                      })}
                     </li>
                   );
-                })
-              ) : (
-                <li role="listitem">
-                  <div
-                    className="block w-full whitespace-nowrap rounded-lg px-4 py-3 text-base font-medium text-gray-700 transition-all duration-200 focus-within:bg-gray-50 focus-within:text-apple-blue hover:translate-x-1 hover:bg-gray-50 hover:text-apple-blue"
-                    onClick={close}
-                    onKeyDown={handleKeyDown}
-                  >
-                    {props.children}
-                  </div>
-                </li>
-              )}
+                }
+
+                return (
+                  <li key={index} role="listitem">
+                    <button
+                      type="button"
+                      className={mobileItemClass}
+                      onClick={close}
+                      onKeyDown={handleKeyDown}
+                    >
+                      {normalizedChildren}
+                    </button>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
 
