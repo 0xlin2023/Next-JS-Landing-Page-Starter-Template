@@ -119,14 +119,13 @@ const NavbarTwoColumns = memo((props: INavbarProps) => {
 
           {/* Mobile menu content */}
           <nav className="flex-1 p-6">
-            <ul className="space-y-4" role="list">
+            <ul className="space-y-4" role="list" style={{ lineHeight: '1.5' }}>
               {/* 克隆children并添加移动端样式 */}
               {Array.isArray(props.children) ? (
                 props.children.map((child, index) => (
                   <li key={index} role="listitem">
                     <div
-                      className="block rounded-lg px-4 py-3 text-base font-medium text-gray-700 transition-all duration-200 focus-within:bg-gray-50 focus-within:text-apple-blue hover:translate-x-1 hover:bg-gray-50 hover:text-apple-blue"
-                      onClick={close}
+                      className="block w-full whitespace-nowrap rounded-lg px-4 py-3 text-base font-medium text-gray-700 transition-all duration-200 focus-within:bg-gray-50 focus-within:text-apple-blue hover:translate-x-1 hover:bg-gray-50 hover:text-apple-blue"
                       onKeyDown={handleKeyDown}
                     >
                       {child}
@@ -136,8 +135,7 @@ const NavbarTwoColumns = memo((props: INavbarProps) => {
               ) : (
                 <li role="listitem">
                   <div
-                    className="block rounded-lg px-4 py-3 text-base font-medium text-gray-700 transition-all duration-200 focus-within:bg-gray-50 focus-within:text-apple-blue hover:translate-x-1 hover:bg-gray-50 hover:text-apple-blue"
-                    onClick={close}
+                    className="block w-full whitespace-nowrap rounded-lg px-4 py-3 text-base font-medium text-gray-700 transition-all duration-200 focus-within:bg-gray-50 focus-within:text-apple-blue hover:translate-x-1 hover:bg-gray-50 hover:text-apple-blue"
                     onKeyDown={handleKeyDown}
                   >
                     {props.children}

@@ -31,6 +31,13 @@ const Hero = () => (
           <Link
             href="/contact"
             className="font-text text-base font-medium text-gray-700 transition-colors duration-200 hover:text-apple-blue"
+            onClick={(e) => {
+              // 确保移动端能正常跳转
+              if (window.innerWidth < 768) {
+                e.preventDefault();
+                window.location.href = '/contact';
+              }
+            }}
           >
             联系我们
           </Link>
