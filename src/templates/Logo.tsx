@@ -8,7 +8,7 @@ type ILogoProps = {
 };
 
 const Logo = memo((props: ILogoProps) => {
-  const size = props.xl ? 40 : 32;
+  const size = props.xl ? 56 : 48;
 
   // 使用useMemo缓存动态计算的样式
   const fontStyle = useMemo(
@@ -23,7 +23,7 @@ const Logo = memo((props: ILogoProps) => {
     <span
       className={`inline-flex items-center text-gray-900 ${fontStyle} transition-opacity duration-200 hover:opacity-80`}
     >
-      <div className="mr-3 flex items-center justify-center">
+      <div className="mr-4 flex items-center justify-center">
         <Image
           src="/assets/images/zld——logo2.png"
           alt={`${AppConfig.site_name} Logo`}
