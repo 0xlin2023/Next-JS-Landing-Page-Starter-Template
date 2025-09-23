@@ -84,7 +84,7 @@ const NavbarTwoColumns = memo((props: INavbarProps) => {
       {/* Mobile menu */}
       {isClient && (
         <div
-          className={`fixed inset-0 z-50 flex justify-end transition-transform duration-300 ease-in-out md:hidden ${
+          className={`fixed inset-0 z-50 flex transition-transform duration-300 ease-in-out md:hidden ${
             isOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
           aria-hidden={!isOpen}
@@ -92,7 +92,7 @@ const NavbarTwoColumns = memo((props: INavbarProps) => {
           <div
             ref={menuRef}
             id="mobile-menu"
-            className="flex size-full flex-col bg-white shadow-xl"
+            className="flex size-full max-w-sm flex-col bg-white shadow-xl sm:max-w-md"
             role="dialog"
             aria-modal="true"
             aria-label="移动端导航菜单"
