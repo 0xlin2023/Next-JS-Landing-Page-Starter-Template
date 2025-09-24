@@ -12,11 +12,16 @@
 /* Apple Typography Base Styles */
 html {
   /* 优先使用系统字体，确保最佳性能和一致的Apple风格 */
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text',
+    'SF Pro Display', 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  font-feature-settings:
+    'kern' 1,
+    'liga' 1,
+    'calt' 1;
 }
 
 /* Apple Design System - Color Variables */
@@ -85,14 +90,16 @@ html {
 
 /* Apple Typography Classes - 使用系统字体优化 */
 .apple-headline {
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', 'Segoe UI', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter',
+    'Segoe UI', sans-serif;
   font-weight: 600;
   letter-spacing: -0.022em;
   line-height: 1.08333;
 }
 
 .apple-subheadline {
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', 'Segoe UI', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter',
+    'Segoe UI', sans-serif;
   font-weight: 400;
   font-size: 21px;
   line-height: 1.381;
@@ -100,7 +107,8 @@ html {
 }
 
 .apple-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', 'Segoe UI', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter',
+    'Segoe UI', sans-serif;
   font-weight: 400;
   font-size: 17px;
   line-height: 1.47059;
