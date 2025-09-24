@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Background } from '../background/Background';
 import { Meta } from '../layout/Meta';
@@ -15,47 +16,8 @@ const DRILL_DIAMETERS = [
   4.0, 4.1, 4.2, 4.3, 4.5, 4.7, 4.9, 5.1, 5.3, 5.5, 5.7,
 ];
 
-// 导航菜单数据
-const NAVIGATION_ITEMS = [
-  {
-    id: 'drill-types',
-    title: '钻尾刀型',
-    icon: (
-      <svg
-        className="size-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-        />
-      </svg>
-    ),
-  },
-  {
-    id: 'drill-specifications',
-    title: '钻尾模具尺寸',
-    icon: (
-      <svg
-        className="size-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 0v10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"
-        />
-      </svg>
-    ),
-  },
-];
+// 导航ID常量
+const NAVIGATION_IDS = ['drill-types', 'drill-specifications'] as const;
 
 // 钻尾刀型图片数据
 const DRILL_TYPE_IMAGES = [
@@ -172,6 +134,7 @@ const DP_DIE_CODES = {
 };
 
 const Products = () => {
+  const { t } = useTranslation();
   const [activeSection, setActiveSection] = useState('');
 
   // 平滑滚动到指定区域
@@ -189,7 +152,7 @@ const Products = () => {
   // 监听滚动位置以高亮当前区域
   useEffect(() => {
     const handleScroll = () => {
-      const sections = NAVIGATION_ITEMS.map((item) => item.id);
+      const sections = NAVIGATION_IDS;
       const scrollPosition = window.scrollY + 200;
 
       for (const sectionId of sections) {
@@ -284,14 +247,53 @@ const Products = () => {
   return (
     <div className="bg-white font-text text-gray-600 antialiased selection:bg-apple-blue/10 selection:text-apple-blue">
       <Meta
-        title={`钻尾模具 - ${AppConfig.title}`}
-        description="东莞市众联达精密模具钻尾（自攻）螺丝模具产品系列：专业生产MB、MC系列钻尾（自攻）螺丝模具，采用高速钢和铬钢材质，满足不同客户工艺需求的精密模具解决方案。"
+        title={`${t('products.title')} - ${AppConfig.title}`}
+        description={t('products.subtitle')}
       />
 
       {/* 左侧快速导航 */}
       <div className="fixed left-6 top-1/2 z-30 hidden -translate-y-1/2 lg:block">
         <div className="space-y-3">
-          {NAVIGATION_ITEMS.map((item) => (
+          {[
+            {
+              id: 'drill-types',
+              title: t('products.drillTypesNav'),
+              icon: (
+                <svg
+                  className="size-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                  />
+                </svg>
+              ),
+            },
+            {
+              id: 'drill-specifications',
+              title: t('products.specificationsNav'),
+              icon: (
+                <svg
+                  className="size-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 0v10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"
+                  />
+                </svg>
+              ),
+            },
+          ].map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
@@ -301,7 +303,7 @@ const Products = () => {
                   : 'bg-white text-gray-600 hover:bg-apple-blue hover:text-white hover:shadow-apple-blue'
               }`}
               title={item.title}
-              aria-label={`跳转到${item.title}部分`}
+              aria-label={`Navigate to ${item.title} section`}
             >
               {item.icon}
               <span className="whitespace-nowrap text-sm font-medium">
@@ -320,7 +322,7 @@ const Products = () => {
                 href="/about"
                 className="font-text text-base font-medium text-gray-700 transition-colors duration-200 hover:text-apple-blue"
               >
-                关于我们
+                {t('navigation.about')}
               </Link>
             </li>
             <li>
@@ -328,7 +330,7 @@ const Products = () => {
                 href="/products"
                 className="font-text text-base font-medium text-apple-blue"
               >
-                产品中心
+                {t('navigation.products')}
               </Link>
             </li>
             <li>
@@ -336,7 +338,7 @@ const Products = () => {
                 href="/contact"
                 className="font-text text-base font-medium text-gray-700 transition-colors duration-200 hover:text-apple-blue"
               >
-                联系我们
+                {t('navigation.contact')}
               </Link>
             </li>
           </NavbarTwoColumns>
@@ -346,7 +348,7 @@ const Products = () => {
       <Section yPadding="pt-20 pb-32">
         <div className="mb-16 text-center">
           <h1 className="mb-6 animate-fade-in font-display text-5xl font-bold tracking-tight text-gray-900 md:text-6xl">
-            钻尾（自攻）螺丝模具
+            {t('products.title')}
           </h1>
         </div>
 
@@ -357,7 +359,7 @@ const Products = () => {
           style={{ animationDelay: '0.2s' }}
         >
           <h2 className="mb-12 text-center font-display text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">
-            钻尾刀型展示
+            {t('products.drillTypes')}
           </h2>
 
           <div className="mx-auto max-w-7xl">
@@ -387,7 +389,9 @@ const Products = () => {
                       {image.id}
                     </h3>
                     <p className="mt-1 font-text text-sm text-gray-600">
-                      {image.description}
+                      {t('products.drillType') +
+                        image.id +
+                        t('products.drillTypeDescription')}
                     </p>
                   </div>
 
@@ -416,10 +420,12 @@ const Products = () => {
                         </svg>
                       </div>
                       <p className="font-display text-sm font-semibold">
-                        {image.id}型
+                        {t('products.drillType') +
+                          image.id +
+                          t('products.drillTypeDescription')}
                       </p>
                       <p className="mt-1 font-text text-xs opacity-90">
-                        点击查看详情
+                        {t('products.clickToViewDetails')}
                       </p>
                     </div>
                   </div>
@@ -436,7 +442,7 @@ const Products = () => {
           style={{ animationDelay: '0.4s' }}
         >
           <h2 className="mb-12 text-center font-display text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">
-            产品规格表
+            {t('products.specifications')}
           </h2>
 
           <div className="mb-12 overflow-x-auto rounded-apple-xl bg-white p-6 shadow-apple-lg">
@@ -1183,14 +1189,14 @@ const Products = () => {
         >
           <div className="mx-auto max-w-4xl rounded-apple-xl bg-gradient-to-r from-gray-50 to-gray-100 p-12">
             <h2 className="mb-6 font-display text-3xl font-bold text-gray-900 md:text-4xl">
-              需要专业钻尾（自攻）螺丝模具？
+              {t('products.cta.title')}
             </h2>
             <p className="mx-auto mb-8 max-w-2xl font-text text-xl text-gray-600">
-              我们提供全系列钻尾（自攻）螺丝模具产品，满足不同规格需求，为您的生产提供可靠保障
+              {t('products.cta.description')}
             </p>
             <Link href="/contact">
               <button className="apple-button bg-apple-blue px-8 py-4 text-lg font-semibold text-white hover:bg-apple-blue-dark hover:shadow-apple-blue">
-                立即咨询报价
+                {t('products.cta.button')}
               </button>
             </Link>
           </div>

@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { Children, memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 
+import { LanguageSwitcher } from '../components/LanguageSwitcher';
 import { useMobileMenu } from '../hooks/useMobileMenu';
 
 type INavbarProps = {
@@ -12,6 +14,7 @@ type INavbarProps = {
 const NavbarTwoColumns = memo((props: INavbarProps) => {
   const { isOpen, toggle, close, menuRef, buttonRef, isClient } =
     useMobileMenu();
+  const { t } = useTranslation();
 
   // 使用useCallback优化事件处理函数
   const handleKeyDown = useCallback(
@@ -34,7 +37,12 @@ const NavbarTwoColumns = memo((props: INavbarProps) => {
 
         {/* Desktop navigation */}
         <nav className="hidden md:block">
-          <ul className="flex items-center space-x-8">{props.children}</ul>
+          <ul className="flex items-center space-x-8">
+            {props.children}
+            <li>
+              <LanguageSwitcher />
+            </li>
+          </ul>
         </nav>
 
         {/* Mobile menu button */}
@@ -45,7 +53,9 @@ const NavbarTwoColumns = memo((props: INavbarProps) => {
             className="group relative p-2 text-gray-600 transition-all duration-300 hover:text-apple-blue focus:outline-none focus:ring-2 focus:ring-apple-blue focus:ring-offset-2"
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
-            aria-label={isOpen ? '关闭菜单' : '打开菜单'}
+            aria-label={
+              isOpen ? t('navigation.closeMenu') : t('navigation.openMenu')
+            }
           >
             <div className="flex size-6 flex-col items-center justify-center">
               {/* 汉堡菜单图标 - 添加动画效果 */}
@@ -95,15 +105,17 @@ const NavbarTwoColumns = memo((props: INavbarProps) => {
             className="flex size-full max-w-sm flex-col bg-white shadow-xl sm:max-w-md"
             role="dialog"
             aria-modal="true"
-            aria-label="移动端导航菜单"
+            aria-label={t('navigation.mobileNavTitle')}
           >
             {/* Mobile menu header */}
             <div className="flex items-center justify-between border-b border-gray-200 px-6 py-4">
-              <h2 className="text-lg font-semibold text-gray-900">菜单</h2>
+              <h2 className="text-lg font-semibold text-gray-900">
+                {t('navigation.menu')}
+              </h2>
               <button
                 onClick={close}
                 className="rounded-md p-2 text-gray-400 transition-colors duration-200 hover:bg-gray-100 hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-apple-blue focus:ring-offset-2"
-                aria-label="关闭菜单"
+                aria-label={t('navigation.closeMenu')}
               >
                 <svg
                   className="size-6"
@@ -141,7 +153,10 @@ const NavbarTwoColumns = memo((props: INavbarProps) => {
 
             {/* Mobile menu footer */}
             <div className="border-t border-gray-200 px-6 py-4">
-              <p className="text-sm text-gray-500">众联达模具有限公司</p>
+              <div className="flex items-center justify-between">
+                <p className="text-sm text-gray-500">众联达模具有限公司</p>
+                <LanguageSwitcher />
+              </div>
             </div>
           </div>
         </div>

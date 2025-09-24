@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { memo, useCallback, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Background } from '../background/Background';
 import { Meta } from '../layout/Meta';
@@ -24,12 +25,18 @@ const ContactCard = memo(
     content,
     href,
     type,
+    isCopiedText,
+    clickToCopyText,
+    clickToViewMapText,
   }: {
     icon: React.ReactNode;
     title: string;
     content: string;
     href?: string;
     type: 'phone' | 'email' | 'address';
+    isCopiedText: string;
+    clickToCopyText: string;
+    clickToViewMapText: string;
   }) => {
     const [isCopied, setIsCopied] = useState(false);
 
@@ -90,7 +97,7 @@ const ContactCard = memo(
           {/* 复制提示 */}
           {isCopied && (
             <div className="absolute right-4 top-4 rounded-full bg-green-500 px-3 py-1 text-sm text-white">
-              已复制!
+              {isCopiedText}
             </div>
           )}
 
@@ -111,7 +118,7 @@ const ContactCard = memo(
                     d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
                   />
                 </svg>
-                点击复制
+                {clickToCopyText}
               </>
             )}
             {type === 'address' && href && (
@@ -129,7 +136,7 @@ const ContactCard = memo(
                     d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                   />
                 </svg>
-                点击查看地图
+                {clickToViewMapText}
               </>
             )}
           </div>
@@ -142,11 +149,13 @@ const ContactCard = memo(
 ContactCard.displayName = 'ContactCard';
 
 const Contact = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="bg-white font-text text-gray-600 antialiased selection:bg-apple-blue/10 selection:text-apple-blue">
       <Meta
-        title={`联系我们 - ${AppConfig.title}`}
-        description="联系东莞市众联达精密模具有限公司，获取专业钻尾（自攻）螺丝模具解决方案。电话：15016880293，地址：广东省东莞市大朗镇富升路62号201室。"
+        title={`${t('contact.title')} - ${AppConfig.title}`}
+        description={t('contact.subtitle')}
       />
 
       {/* 导航栏 */}
@@ -158,7 +167,7 @@ const Contact = () => {
                 href="/about"
                 className="font-text text-base font-medium text-gray-700 transition-colors duration-200 hover:text-apple-blue"
               >
-                关于我们
+                {t('navigation.about')}
               </Link>
             </li>
             <li>
@@ -166,7 +175,7 @@ const Contact = () => {
                 href="/products"
                 className="font-text text-base font-medium text-gray-700 transition-colors duration-200 hover:text-apple-blue"
               >
-                产品中心
+                {t('navigation.products')}
               </Link>
             </li>
             <li>
@@ -174,7 +183,7 @@ const Contact = () => {
                 href="/contact"
                 className="font-text text-base font-medium text-apple-blue"
               >
-                联系我们
+                {t('navigation.contact')}
               </Link>
             </li>
           </NavbarTwoColumns>
@@ -186,10 +195,10 @@ const Contact = () => {
         {/* 页面标题 */}
         <div className="mb-16 text-center">
           <h1 className="mb-6 animate-fade-in font-display text-5xl font-bold tracking-tight text-gray-900 md:text-6xl">
-            联系我们
+            {t('contact.title')}
           </h1>
           <p className="mx-auto max-w-4xl animate-slide-up font-text text-xl leading-normal tracking-wide text-gray-600 md:text-2xl">
-            我们期待与您合作，为您提供专业的钻尾（自攻）螺丝模具解决方案。欢迎通过以下方式与我们取得联系。
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -203,7 +212,7 @@ const Contact = () => {
             <div className="mb-12 overflow-hidden rounded-apple-xl shadow-apple-lg">
               <div className="bg-gray-100 p-4">
                 <h3 className="mb-2 font-display text-xl font-bold text-gray-900">
-                  公司位置
+                  {t('contact.companyLocation')}
                 </h3>
                 <p className="font-text text-gray-600">
                   {CONTACT_INFO.address}
@@ -228,7 +237,7 @@ const Contact = () => {
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <h4 className="mb-1 font-display font-bold text-gray-900">
-                        东莞市众联达精密模具有限公司
+                        众联达模具有限公司
                       </h4>
                       <p className="mb-2 font-text text-sm text-gray-600">
                         {CONTACT_INFO.address}
@@ -264,7 +273,7 @@ const Contact = () => {
                               d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                             />
                           </svg>
-                          周一至周五 8:00-18:00
+                          {t('contact.hours')}
                         </span>
                       </div>
                     </div>
@@ -337,8 +346,11 @@ const Contact = () => {
                     />
                   </svg>
                 }
-                title="联系电话"
+                title={t('contact.contactPhone')}
                 content={CONTACT_INFO.phone}
+                isCopiedText={t('contact.copied')}
+                clickToCopyText={t('contact.clickToCopy')}
+                clickToViewMapText={t('contact.clickToViewMap')}
               />
 
               {/* 邮箱卡片 */}
@@ -359,8 +371,11 @@ const Contact = () => {
                     />
                   </svg>
                 }
-                title="电子邮箱"
+                title={t('contact.contactEmail')}
                 content={CONTACT_INFO.email}
+                isCopiedText={t('contact.copied')}
+                clickToCopyText={t('contact.clickToCopy')}
+                clickToViewMapText={t('contact.clickToViewMap')}
               />
 
               {/* 地址卡片 */}
@@ -388,8 +403,11 @@ const Contact = () => {
                     />
                   </svg>
                 }
-                title="公司地址"
+                title={t('contact.contactAddress')}
                 content={CONTACT_INFO.address}
+                isCopiedText={t('contact.copied')}
+                clickToCopyText={t('contact.clickToCopy')}
+                clickToViewMapText={t('contact.clickToViewMap')}
               />
             </div>
           </div>

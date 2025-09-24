@@ -14,11 +14,15 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "classnames": "^2.5.1",
+    "i18next": "^25.5.2",
+    "i18next-browser-languagedetector": "^8.2.0",
     "next": "^14.1.0",
     "next-seo": "^6.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-i18next": "^15.7.3",
     "styled-jsx-plugin-postcss": "^4.0.1"
   },
   "devDependencies": {

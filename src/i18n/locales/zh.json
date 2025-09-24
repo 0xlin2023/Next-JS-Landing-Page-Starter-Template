@@ -1,0 +1,134 @@
+{
+  "navigation": {
+    "about": "关于我们",
+    "products": "产品中心",
+    "contact": "联系我们",
+    "menu": "菜单",
+    "closeMenu": "关闭菜单",
+    "openMenu": "打开菜单",
+    "mobileNavTitle": "移动端导航菜单"
+  },
+  "hero": {
+    "title": "专业精密模具制造商\n众联达模具",
+    "description": "专业生产销售钻尾（自攻）螺丝模具、组合模具等，为您提供高品质的精密模具解决方案。精益求精，追求卓越，为客户创造更大价值。",
+    "button": "联系我们"
+  },
+  "company": {
+    "badge": "企业介绍",
+    "title": "众联达\n精密模具",
+    "subtitle": "专业制造钻尾（自攻）螺丝模具的领先企业",
+    "description1": "众联达模具有限公司是一家专业制造钻尾（自攻）螺丝模具的企业，产品涵盖普通碳钢、不锈钢及复合螺丝所需的钻尾（自攻）螺丝模具，能够帮助行业应对高技术难度的钻尾（自攻）螺丝生产。",
+    "description2": "公司拥有丰富的行业经验，长期以来不断获得业内认可，并被指定为多家客户的钻尾（自攻）螺丝模具供应商。",
+    "description3": "目前，众联达模具已在中国大陆市场建立了较大规模的合作基础，并积极拓展欧美及亚洲等高需求市场，将中国优质的钻尾（自攻）螺丝模具推广至全球。",
+    "feature1": {
+      "title": "专业制造",
+      "subtitle": "钻尾（自攻）螺丝模具"
+    },
+    "feature2": {
+      "title": "全球市场",
+      "subtitle": "欧美亚洲拓展"
+    }
+  },
+  "sponsors": {
+    "title": "产品展示",
+    "description": "众联达精密模具产品系列，专业生产MB、MC系列钻尾（自攻）螺丝模具，满足不同客户需求。",
+    "products": {
+      "mbhs": "MB高速钢 钻尾模具",
+      "mbtub": "MB铬钢 钻尾模具",
+      "mchs": "MC高速钢 钻尾模具"
+    }
+  },
+  "footer": {
+    "companyName": "众联达模具有限公司",
+    "allRightsReserved": "版权所有",
+    "contactInfo": "联系我们",
+    "address": "地址",
+    "phone": "电话",
+    "email": "邮箱"
+  },
+  "about": {
+    "title": "关于我们",
+    "subtitle": "东莞市众联达精密模具有限公司——专业钻尾（自攻）螺丝模具制造商",
+    "companyProfile": "企业简介",
+    "profileDescription1": "东莞市众联达精密模具有限公司成立于2019年，至今已有6年发展历程。公司专注于生产和销售钻尾（自攻）螺丝模具，凭借先进的设备和专业的技术团队，已成长为行业中等规模企业。",
+    "profileDescription2": "公司创始人刘先生拥有20多年的行业经验，带领团队不断创新、精益求精。我们与多家业内知名螺丝厂建立了稳固的合作关系，始终坚持以质量为核心、以服务为导向，持续提升产品性能，赢得了客户的广泛认可和信赖。",
+    "coreAdvantages": "核心优势",
+    "advantages": {
+      "experience": {
+        "title": "丰富经验",
+        "description": "创始人拥有20多年行业经验，深度理解市场需求和技术发展趋势。",
+        "stats": "20+ 年经验"
+      },
+      "quality": {
+        "title": "品质保证",
+        "description": "严格的质量控制体系，确保每一件产品都达到行业标准和客户要求。",
+        "stats": "100% 质检"
+      },
+      "innovation": {
+        "title": "技术创新",
+        "description": "持续投入研发，不断优化生产工艺，提升产品性能和竞争力。",
+        "stats": "持续研发"
+      },
+      "team": {
+        "title": "专业团队",
+        "description": "拥有经验丰富的技术团队，为客户提供专业的技术支持和解决方案。",
+        "stats": "专业服务"
+      },
+      "price": {
+        "title": "合理价格",
+        "description": "基于规模化生产优势，为客户提供具有竞争力的价格方案。",
+        "stats": "优势价格"
+      },
+      "trust": {
+        "title": "客户信赖",
+        "description": "与多家知名螺丝厂建立长期合作关系，赢得客户广泛认可和信赖。",
+        "stats": "长期合作"
+      }
+    },
+    "cta": {
+      "title": "期待与您携手合作",
+      "description": "选择众联达，选择专业与品质。我们将竭诚为您提供最优质的钻尾（自攻）螺丝模具解决方案，共创美好未来。",
+      "contactUs": "联系我们",
+      "viewProducts": "查看产品"
+    }
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "我们期待与您合作，为您提供专业的钻尾（自攻）螺丝模具解决方案。欢迎通过以下方式与我们取得联系。",
+    "companyLocation": "公司位置",
+    "contactPhone": "联系电话",
+    "contactEmail": "电子邮箱",
+    "contactAddress": "公司地址",
+    "copied": "已复制!",
+    "clickToCopy": "点击复制",
+    "clickToViewMap": "点击查看地图",
+    "navigation": "导航",
+    "hours": "周一至周五 8:00-18:00"
+  },
+  "products": {
+    "title": "钻尾（自攻）螺丝模具",
+    "drillTypes": "钻尾刀型展示",
+    "specifications": "产品规格表",
+    "drillTypesNav": "钻尾刀型",
+    "specificationsNav": "钻尾模具尺寸",
+    "drillType": "钻尾",
+    "drillTypeDescription": "型钻尾刀具",
+    "clickToViewDetails": "点击查看详情",
+    "cta": {
+      "title": "需要专业钻尾（自攻）螺丝模具？",
+      "description": "我们提供全系列钻尾（自攻）螺丝模具产品，满足不同规格需求，为您的生产提供可靠保障",
+      "button": "立即咨询报价"
+    }
+  },
+  "language": {
+    "switch": "切换语言",
+    "chinese": "中文",
+    "english": "English"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "出错了",
+    "success": "成功",
+    "backToHome": "返回首页"
+  }
+}

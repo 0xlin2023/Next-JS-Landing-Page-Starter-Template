@@ -1,0 +1,134 @@
+{
+  "navigation": {
+    "about": "About Us",
+    "products": "Products",
+    "contact": "Contact",
+    "menu": "Menu",
+    "closeMenu": "Close Menu",
+    "openMenu": "Open Menu",
+    "mobileNavTitle": "Mobile Navigation Menu"
+  },
+  "hero": {
+    "title": "Professional Precision Mold Manufacturer\nZhonglianda Mold",
+    "description": "Specializing in the production and sales of drill tail (self-tapping) screw molds, combination molds, and more, providing you with high-quality precision mold solutions. Pursuing excellence and creating greater value for customers.",
+    "button": "Contact Us"
+  },
+  "company": {
+    "badge": "Company Introduction",
+    "title": "Zhonglianda\nPrecision Mold",
+    "subtitle": "Leading enterprise specializing in drill tail (self-tapping) screw mold manufacturing",
+    "description1": "Zhonglianda Mold Co., Ltd. is a professional manufacturer of drill tail (self-tapping) screw molds. Our products cover drill tail (self-tapping) screw molds required for ordinary carbon steel, stainless steel, and composite screws, helping the industry cope with high-technical difficulty drill tail (self-tapping) screw production.",
+    "description2": "The company has extensive industry experience and has continuously gained industry recognition, being designated as the drill tail (self-tapping) screw mold supplier for many customers.",
+    "description3": "Currently, Zhonglianda Mold has established a large-scale cooperation foundation in the Chinese mainland market and actively expands into high-demand markets such as Europe, America, and Asia, promoting China's high-quality drill tail (self-tapping) screw molds to the world.",
+    "feature1": {
+      "title": "Professional Manufacturing",
+      "subtitle": "Drill Tail (Self-Tapping) Screw Molds"
+    },
+    "feature2": {
+      "title": "Global Market",
+      "subtitle": "European, American & Asian Expansion"
+    }
+  },
+  "sponsors": {
+    "title": "Product Showcase",
+    "description": "Zhonglianda precision mold product series, specializing in MB and MC series drill tail (self-tapping) screw molds to meet different customer needs.",
+    "products": {
+      "mbhs": "MB High-Speed Steel Drill Mold",
+      "mbtub": "MB Chromium Steel Drill Mold",
+      "mchs": "MC High-Speed Steel Drill Mold"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Dongguan Zhonglianda Precision Mold Co., Ltd. - Professional Drill Tail (Self-Tapping) Screw Mold Manufacturer",
+    "companyProfile": "Company Profile",
+    "profileDescription1": "Founded in 2019, Dongguan Zhonglianda Precision Mold Co., Ltd. has 6 years of development experience. The company specializes in the production and sales of drill tail (self-tapping) screw molds, and has grown into a medium-sized enterprise in the industry with advanced equipment and professional technical teams.",
+    "profileDescription2": "The company's founder, Mr. Liu, has over 20 years of industry experience, leading the team to continuously innovate and strive for excellence. We have established stable cooperative relationships with many well-known screw manufacturers in the industry, always adhering to quality as the core and service as the orientation, continuously improving product performance, and has won wide recognition and trust from customers.",
+    "coreAdvantages": "Core Advantages",
+    "advantages": {
+      "experience": {
+        "title": "Rich Experience",
+        "description": "The founder has over 20 years of industry experience, deeply understanding market needs and technological development trends.",
+        "stats": "20+ Years Experience"
+      },
+      "quality": {
+        "title": "Quality Assurance",
+        "description": "Strict quality control system ensures that every product meets industry standards and customer requirements.",
+        "stats": "100% Quality Inspection"
+      },
+      "innovation": {
+        "title": "Technical Innovation",
+        "description": "Continuous investment in R&D, constantly optimizing production processes to improve product performance and competitiveness.",
+        "stats": "Continuous R&D"
+      },
+      "team": {
+        "title": "Professional Team",
+        "description": "Experienced technical team providing professional technical support and solutions for customers.",
+        "stats": "Professional Service"
+      },
+      "price": {
+        "title": "Competitive Pricing",
+        "description": "Providing competitive price solutions for customers based on large-scale production advantages.",
+        "stats": "Competitive Pricing"
+      },
+      "trust": {
+        "title": "Customer Trust",
+        "description": "Established long-term cooperative relationships with many well-known screw manufacturers, winning wide recognition and trust from customers.",
+        "stats": "Long-term Cooperation"
+      }
+    },
+    "cta": {
+      "title": "Looking Forward to Cooperating with You",
+      "description": "Choose Zhonglianda, choose professionalism and quality. We will wholeheartedly provide you with the highest quality drill tail (self-tapping) screw mold solutions to create a better future together.",
+      "contactUs": "Contact Us",
+      "viewProducts": "View Products"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We look forward to cooperating with you and providing you with professional drill tail (self-tapping) screw mold solutions. Please feel free to contact us through the following methods.",
+    "companyLocation": "Company Location",
+    "contactPhone": "Contact Phone",
+    "contactEmail": "Contact Email",
+    "contactAddress": "Company Address",
+    "copied": "Copied!",
+    "clickToCopy": "Click to copy",
+    "clickToViewMap": "Click to view map",
+    "navigation": "Navigation",
+    "hours": "Monday to Friday 8:00-18:00"
+  },
+  "products": {
+    "title": "Drill Tail (Self-Tapping) Screw Molds",
+    "drillTypes": "Drill Bit Types Display",
+    "specifications": "Product Specification Table",
+    "drillTypesNav": "Drill Bit Types",
+    "specificationsNav": "Drill Mold Dimensions",
+    "drillType": "Drill ",
+    "drillTypeDescription": " Type Drill Bit",
+    "clickToViewDetails": "Click to view details",
+    "cta": {
+      "title": "Need Professional Drill Tail (Self-Tapping) Screw Molds?",
+      "description": "We provide a full range of drill tail (self-tapping) screw mold products to meet different specification requirements, providing reliable guarantee for your production",
+      "button": "Consult Quote Now"
+    }
+  },
+  "footer": {
+    "companyName": "Zhonglianda Mold Co., Ltd.",
+    "allRightsReserved": "All Rights Reserved",
+    "contactInfo": "Contact Information",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email"
+  },
+  "language": {
+    "switch": "Switch Language",
+    "chinese": "中文",
+    "english": "English"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error occurred",
+    "success": "Success",
+    "backToHome": "Back to Home"
+  }
+}

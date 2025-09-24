@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Background } from '../background/Background';
 import { Meta } from '../layout/Meta';
@@ -91,11 +92,13 @@ const FeatureCard = memo(
 FeatureCard.displayName = 'FeatureCard';
 
 const About = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="bg-white font-text text-gray-600 antialiased selection:bg-apple-blue/10 selection:text-apple-blue">
       <Meta
-        title={`关于我们 - ${AppConfig.title}`}
-        description="东莞市众联达精密模具有限公司成立于2019年，专注于钻尾（自攻）螺丝模具生产销售，拥有6年发展历程和20多年行业经验。"
+        title={`${t('about.title')} - ${AppConfig.title}`}
+        description={t('about.subtitle')}
       />
 
       {/* 导航栏 */}
@@ -107,7 +110,7 @@ const About = () => {
                 href="/about"
                 className="font-text text-base font-medium text-apple-blue"
               >
-                关于我们
+                {t('navigation.about')}
               </Link>
             </li>
             <li>
@@ -115,7 +118,7 @@ const About = () => {
                 href="/products"
                 className="font-text text-base font-medium text-gray-700 transition-colors duration-200 hover:text-apple-blue"
               >
-                产品中心
+                {t('navigation.products')}
               </Link>
             </li>
             <li>
@@ -123,7 +126,7 @@ const About = () => {
                 href="/contact"
                 className="font-text text-base font-medium text-gray-700 transition-colors duration-200 hover:text-apple-blue"
               >
-                联系我们
+                {t('navigation.contact')}
               </Link>
             </li>
           </NavbarTwoColumns>
@@ -135,10 +138,10 @@ const About = () => {
         {/* 页面标题 */}
         <div className="mb-16 text-center">
           <h1 className="mb-6 animate-fade-in font-display text-5xl font-bold tracking-tight text-gray-900 md:text-6xl">
-            关于我们
+            {t('about.title')}
           </h1>
           <p className="mx-auto max-w-4xl animate-slide-up font-text text-xl leading-normal tracking-wide text-gray-600 md:text-2xl">
-            东莞市众联达精密模具有限公司——专业钻尾（自攻）螺丝模具制造商
+            {t('about.subtitle')}
           </p>
         </div>
 
@@ -152,15 +155,11 @@ const About = () => {
               <div className="grid items-center gap-12 md:grid-cols-2">
                 <div>
                   <h2 className="mb-6 font-display text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">
-                    企业简介
+                    {t('about.companyProfile')}
                   </h2>
                   <div className="space-y-4 font-text text-lg leading-relaxed text-gray-700">
-                    <p>
-                      东莞市众联达精密模具有限公司成立于2019年，至今已有6年发展历程。公司专注于生产和销售钻尾（自攻）螺丝模具，凭借先进的设备和专业的技术团队，已成长为行业中等规模企业。
-                    </p>
-                    <p>
-                      公司创始人刘先生拥有20多年的行业经验，带领团队不断创新、精益求精。我们与多家业内知名螺丝厂建立了稳固的合作关系，始终坚持以质量为核心、以服务为导向，持续提升产品性能，赢得了客户的广泛认可和信赖。
-                    </p>
+                    <p>{t('about.profileDescription1')}</p>
+                    <p>{t('about.profileDescription2')}</p>
                   </div>
                 </div>
                 <div className="flex items-center justify-center">
@@ -188,7 +187,7 @@ const About = () => {
         >
           <div className="mx-auto max-w-6xl">
             <h2 className="mb-12 text-center font-display text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">
-              核心优势
+              {t('about.coreAdvantages')}
             </h2>
 
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -208,9 +207,9 @@ const About = () => {
                     />
                   </svg>
                 }
-                title="丰富经验"
-                description="创始人拥有20多年行业经验，深度理解市场需求和技术发展趋势。"
-                stats="20+ 年经验"
+                title={t('about.advantages.experience.title')}
+                description={t('about.advantages.experience.description')}
+                stats={t('about.advantages.experience.stats')}
               />
 
               <FeatureCard
@@ -229,9 +228,9 @@ const About = () => {
                     />
                   </svg>
                 }
-                title="品质保证"
-                description="严格的质量控制体系，确保每一件产品都达到行业标准和客户要求。"
-                stats="100% 质检"
+                title={t('about.advantages.quality.title')}
+                description={t('about.advantages.quality.description')}
+                stats={t('about.advantages.quality.stats')}
               />
 
               <FeatureCard
@@ -250,9 +249,9 @@ const About = () => {
                     />
                   </svg>
                 }
-                title="技术创新"
-                description="持续投入研发，不断优化生产工艺，提升产品性能和竞争力。"
-                stats="持续研发"
+                title={t('about.advantages.innovation.title')}
+                description={t('about.advantages.innovation.description')}
+                stats={t('about.advantages.innovation.stats')}
               />
 
               <FeatureCard
@@ -271,9 +270,9 @@ const About = () => {
                     />
                   </svg>
                 }
-                title="专业团队"
-                description="拥有经验丰富的技术团队，为客户提供专业的技术支持和解决方案。"
-                stats="专业服务"
+                title={t('about.advantages.team.title')}
+                description={t('about.advantages.team.description')}
+                stats={t('about.advantages.team.stats')}
               />
 
               <FeatureCard
@@ -292,9 +291,9 @@ const About = () => {
                     />
                   </svg>
                 }
-                title="合理价格"
-                description="基于规模化生产优势，为客户提供具有竞争力的价格方案。"
-                stats="优势价格"
+                title={t('about.advantages.price.title')}
+                description={t('about.advantages.price.description')}
+                stats={t('about.advantages.price.stats')}
               />
 
               <FeatureCard
@@ -313,9 +312,9 @@ const About = () => {
                     />
                   </svg>
                 }
-                title="客户信赖"
-                description="与多家知名螺丝厂建立长期合作关系，赢得客户广泛认可和信赖。"
-                stats="长期合作"
+                title={t('about.advantages.trust.title')}
+                description={t('about.advantages.trust.description')}
+                stats={t('about.advantages.trust.stats')}
               />
             </div>
           </div>
@@ -328,10 +327,10 @@ const About = () => {
         >
           <div className="mx-auto max-w-4xl rounded-apple-xl bg-gradient-to-r from-apple-blue to-blue-600 p-12 text-white shadow-apple-lg">
             <h2 className="mb-6 font-display text-3xl font-bold md:text-4xl">
-              期待与您携手合作
+              {t('about.cta.title')}
             </h2>
             <p className="mx-auto mb-8 max-w-2xl font-text text-lg leading-relaxed opacity-90">
-              选择众联达，选择专业与品质。我们将竭诚为您提供最优质的钻尾（自攻）螺丝模具解决方案，共创美好未来。
+              {t('about.cta.description')}
             </p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
@@ -351,7 +350,7 @@ const About = () => {
                     d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
                   />
                 </svg>
-                联系我们
+                {t('about.cta.contactUs')}
               </Link>
               <Link
                 href="/products"
@@ -370,7 +369,7 @@ const About = () => {
                     d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
                   />
                 </svg>
-                查看产品
+                {t('about.cta.viewProducts')}
               </Link>
             </div>
           </div>
